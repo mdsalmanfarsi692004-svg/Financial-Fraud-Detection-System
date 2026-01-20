@@ -52,5 +52,7 @@ cd FraudGuard-AI
 # Install dependencies
 pip install -r requirements.txt
 
+**Author**
+Md Salman Farsi
 # Run the app
 streamlit run Fraud_Detection.py
