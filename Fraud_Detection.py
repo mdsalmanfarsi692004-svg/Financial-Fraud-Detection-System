@@ -14,14 +14,17 @@ st.set_page_config(
 # --- CUSTOM CSS ---
 st.markdown("""
     <style>
+    /* Hide MainMenu and Footer */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     
+    /* Fix Alert Text Color */
     div[data-testid="stAlert"] p, div[data-testid="stAlert"] svg {
         color: #ffffff !important;
         fill: #ffffff !important;
     }
 
+    /* Sidebar Alignment */
     section[data-testid="stSidebar"] .block-container {
         display: flex;
         flex-direction: column;
@@ -40,10 +43,12 @@ st.markdown("""
         width: 100%;
     }
 
+    /* Main Page Text Alignment */
     .main .block-container h1, .main .block-container h3, .main .block-container h4, .main .block-container p {
         text-align: center !important;
     }
     
+    /* Input Label Alignment */
     .stNumberInput label {
         justify-content: center !important;
         display: flex;
@@ -70,11 +75,13 @@ st.markdown("""
         transform: scale(1.02);
     }
 
-    /* --- THE FIX FOR DOUBLE SHIELDS --- */
-    /* Ensures the spans containing the HTML entities have proper spacing */
+    /* --- COLORFUL EMOJI FIX FOR CLOUD --- */
     .shield-icon {
         display: inline-block;
-        margin: 0 15px; /* Adjust space between shield and text here */
+        margin: 0 15px;
+        font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+        font-size: 1.2em; 
+        vertical-align: middle;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -90,6 +97,7 @@ except FileNotFoundError:
 with st.sidebar:
     c1, c2, c3 = st.columns([1, 2, 1])
     with c2:
+        # Logo Image
         st.image("https://cdn-icons-png.flaticon.com/512/1161/1161388.png", width=120)
     
     st.markdown("<h1 style='text-align: center; margin-top: 0;'>FraudGuard AI</h1>", unsafe_allow_html=True)
@@ -110,9 +118,15 @@ with st.sidebar:
     )
 
 # --- MAIN PAGE CODE ---
-# --- THE FIX APPLIED HERE ---
-# Using HTML Entity &#128737; inside styled spans to guarantee rendering on both sides.
-st.markdown("<h1 style='text-align: center;'><span class='shield-icon'>&#128737;</span> Financial Fraud Detection System <span class='shield-icon'>&#128737;</span></h1>", unsafe_allow_html=True)
+# Here is the fix: Using the .shield-icon class to force colorful emojis
+st.markdown("""
+    <h1 style='text-align: center;'>
+        <span class='shield-icon'>🛡️</span> 
+        Financial Fraud Detection System 
+        <span class='shield-icon'>🛡️</span>
+    </h1>
+""", unsafe_allow_html=True)
+
 st.markdown("<h3 style='text-align: center;'>AI-Powered Security Analysis</h3>", unsafe_allow_html=True)
 
 st.markdown("""
