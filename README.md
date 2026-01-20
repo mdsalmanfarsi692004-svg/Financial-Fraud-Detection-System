@@ -39,7 +39,7 @@
 ---
 
 ## 📂 Project Structure
-```text
+text
 ├── images/             # Application screenshots and UI assets
 ├── notebooks/          # Data cleaning, EDA, and model training
 ├── reports/            # Technical report and project presentation
