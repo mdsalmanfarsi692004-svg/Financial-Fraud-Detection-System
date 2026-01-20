@@ -6,7 +6,7 @@
 
 **FraudGuard AI** is a machine learning-based application designed to detect fraudulent financial transactions in real-time. It analyzes transaction patterns to classify them as **Safe** or **Fraudulent**.
 
-🔗 **Live Demo:** [Click Here to View App] https://financial-fraud-guard-ai.streamlit.app/
+🔗 **Live Demo:** [Click Here to View App] (https://financial-fraud-guard-ai.streamlit.app/)
 
 ---
 
