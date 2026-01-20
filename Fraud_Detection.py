@@ -3,19 +3,19 @@ import pandas as pd
 import joblib
 import time
 
+# --- PAGE CONFIG ---
 st.set_page_config(
     page_title="FraudGuard AI | Financial Fraud Detection",
     page_icon="🛡️",
     layout="wide",
-    initial_sidebar_state="expanded"  # Ye line sidebar ko khula rakhti hai
+    initial_sidebar_state="expanded"
 )
 
+# --- CUSTOM CSS ---
 st.markdown("""
     <style>
-    /* MainMenu hata diya lekin Header rehne diya taki Sidebar button dikhe */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
-    /* header {visibility: hidden;}  <-- YE LINE HATA DI HAI */
     
     div[data-testid="stAlert"] p, div[data-testid="stAlert"] svg {
         color: #ffffff !important;
@@ -69,9 +69,17 @@ st.markdown("""
         color: white;
         transform: scale(1.02);
     }
+
+    /* --- THE FIX FOR DOUBLE SHIELDS --- */
+    /* Ensures the spans containing the HTML entities have proper spacing */
+    .shield-icon {
+        display: inline-block;
+        margin: 0 15px; /* Adjust space between shield and text here */
+    }
     </style>
 """, unsafe_allow_html=True)
 
+# --- MODEL LOADING ---
 try:
     model = joblib.load("fraud_detection_pipeline.pkl")
 except FileNotFoundError:
@@ -102,7 +110,9 @@ with st.sidebar:
     )
 
 # --- MAIN PAGE CODE ---
-st.markdown("<h1 style='text-align: center;'>🛡️ Financial Fraud Detection System</h1>", unsafe_allow_html=True)
+# --- THE FIX APPLIED HERE ---
+# Using HTML Entity &#128737; inside styled spans to guarantee rendering on both sides.
+st.markdown("<h1 style='text-align: center;'><span class='shield-icon'>&#128737;</span> Financial Fraud Detection System <span class='shield-icon'>&#128737;</span></h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center;'>AI-Powered Security Analysis</h3>", unsafe_allow_html=True)
 
 st.markdown("""
