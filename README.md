@@ -13,14 +13,16 @@
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Home Page](images/home_page.png) 
-*(Make sure to put your actual screenshot filenames here)*
+(<img width="1919" height="917" alt="Home Page" src="https://github.com/user-attachments/assets/ddff0f75-604d-47fe-9b2a-c7a920f7c585" />
+) 
 
 ### ✅ Safe Transaction Result
-![Safe Result](images/safe_result.png)
+(<img width="1914" height="918" alt="Safe Transaction" src="https://github.com/user-attachments/assets/49f004b7-f0d2-4b52-aee8-1616b35eb7dc" />
+)
 
 ### ⚠️ Fraud Detected Alert
-![Fraud Result](images/fraud_result.png)
+(<img width="1913" height="920" alt="Fraud Transaction" src="https://github.com/user-attachments/assets/25446b58-7a1c-4441-afef-689a07879b3b" />
+)
 
 ---
 
@@ -48,4 +50,4 @@
 2. **Install Dependencies**
    pip install -r requirements.txt
 3. **Run the App**
-   streamlit run main.py
+   streamlit run Fraud_Detection.py
