@@ -13,13 +13,15 @@
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-<img width="1919" height="917" alt="Home Page" src="https://github.com/user-attachments/assets/ddff0f75-604d-47fe-9b2a-c7a920f7c585" />
+<img width="1885" height="879" alt="Screenshot 2026-01-23 222841" src="https://github.com/user-attachments/assets/0b947abe-bfe0-4278-9b22-40beb0e02251" />
+
 
 ### ✅ Safe Transaction Result
-<img width="1891" height="917" alt="Safe Transaction" src="https://github.com/user-attachments/assets/ee57b0ea-cea9-46ea-8b69-281b62668ab0" />
+<img width="1886" height="857" alt="Screenshot 2026-01-23 223325" src="https://github.com/user-attachments/assets/0dede774-e755-4522-aea3-8115d90d0bd3" />
+
 
 ### ⚠️ Fraud Detected Alert
-<img width="1888" height="917" alt="Fraud Transaction" src="https://github.com/user-attachments/assets/096f8bb3-adce-4373-8b0e-361f4d7c680c" />
+<img width="1877" height="886" alt="Screenshot 2026-01-23 223703" src="https://github.com/user-attachments/assets/4131f90e-6c2e-4354-9723-62fb7308ff68" />
 
 ---
 
