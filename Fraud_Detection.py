@@ -106,6 +106,8 @@ with st.sidebar:
     
     st.markdown("<h3 style='text-align: center;'>Transaction Details</h3>", unsafe_allow_html=True)
     
+    # --- HERE IS THE MAPPING LOGIC START ---
+    # User sees friendly names, but we will map them later
     transaction_type = st.selectbox(
         "Select Transaction Type", 
         ["PAYMENT", "TRANSFER", "CASH_OUT", "DEPOSIT"]
@@ -118,7 +120,6 @@ with st.sidebar:
     )
 
 # --- MAIN PAGE CODE ---
-# Here is the fix: Using the .shield-icon class to force colorful emojis
 st.markdown("""
     <h1 style='text-align: center;'>
         <span class='shield-icon'>🛡️</span> 
@@ -173,8 +174,20 @@ with b2:
     predict_btn = st.button("🔍 Analyze Transaction", use_container_width=True)
 
 if predict_btn:
+    # --- ERROR FIX: MAPPING LOGIC ---
+    # Convert UI labels (like DEPOSIT) to Model labels (like CASH_IN)
+    type_mapping = {
+        "PAYMENT": "PAYMENT",
+        "TRANSFER": "TRANSFER",
+        "CASH_OUT": "CASH_OUT",
+        "DEPOSIT": "CASH_IN"  # <--- This fixes the 'Unseen Category' error
+    }
+    
+    # Get the correct value for the model
+    selected_type_for_model = type_mapping[transaction_type]
+
     input_data = pd.DataFrame([{
-        "type": transaction_type,
+        "type": selected_type_for_model, # Using the mapped value here
         "amount": amount,
         "oldbalanceOrg": oldbalanceOrg,
         "newbalanceOrig": newbalanceOrig,
